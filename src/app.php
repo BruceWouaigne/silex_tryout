@@ -31,7 +31,7 @@ $app->get('/list/{content_type_accepted}', function ($content_type_accepted) use
 
 			$cURL = curl_init();
 
-			curl_setopt($cURL, CURLOPT_URL, "http://localhost:8080/SF2_tryout/web/app_dev.php/");
+			curl_setopt($cURL, CURLOPT_URL, "http://localhost/SF2_tryout/web/app_dev.php/");
 			curl_setopt($cURL, CURLOPT_HTTPHEADER, array('Accept: ' . $content_type_requested));
 			curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true);
 			$output = curl_exec($cURL);
@@ -59,7 +59,7 @@ $app->get('/single/{content_type_accepted}/{customer_id}', function ($content_ty
 
 			$cURL = curl_init();
 
-			curl_setopt($cURL, CURLOPT_URL, "http://localhost:8080/SF2_tryout/web/app_dev.php/$customer_id");
+			curl_setopt($cURL, CURLOPT_URL, "http://localhost/SF2_tryout/web/app_dev.php/$customer_id");
 			curl_setopt($cURL, CURLOPT_HTTPHEADER, array('Accept: ' . $content_type_requested));
 			curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true);
 			$output = curl_exec($cURL);
@@ -83,7 +83,7 @@ $app->post('/add', function () use ($app) {
 	
 			$cURL = curl_init();
 
-			curl_setopt($cURL, CURLOPT_URL, "http://localhost:8080/SF2_tryout/web/app_dev.php/");
+			curl_setopt($cURL, CURLOPT_URL, "http://localhost/SF2_tryout/web/app_dev.php/");
 			curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($cURL, CURLOPT_POST, true);
 			curl_setopt($cURL, CURLOPT_POSTFIELDS, $post_datas);
@@ -110,7 +110,7 @@ $app->post('/edit', function () use ($app) {
 			
 			$cURL = curl_init();
 
-			curl_setopt($cURL, CURLOPT_URL, "http://localhost:8080/SF2_tryout/web/app_dev.php/");
+			curl_setopt($cURL, CURLOPT_URL, "http://localhost/SF2_tryout/web/app_dev.php/");
 			curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($cURL, CURLOPT_CUSTOMREQUEST, "PUT");
 			curl_setopt($cURL, CURLOPT_POSTFIELDS, $post_datas);
@@ -128,7 +128,7 @@ $app->get('/delete/{customer_id}', function ($customer_id) use ($app) {
 
 			$cURL = curl_init();
 
-			curl_setopt($cURL, CURLOPT_URL, "http://localhost:8080/SF2_tryout/web/app_dev.php/$customer_id");
+			curl_setopt($cURL, CURLOPT_URL, "http://localhost/SF2_tryout/web/app_dev.php/$customer_id");
 			curl_setopt($cURL, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($cURL, CURLOPT_CUSTOMREQUEST, 'DELETE');
 			$output = curl_exec($cURL);

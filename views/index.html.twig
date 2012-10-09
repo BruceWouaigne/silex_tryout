@@ -4,122 +4,122 @@
 
 <script type="text/javascript">
 
-	$(document).ready(function(){
-		$("button, input[type='submit']").button();
-		$("#tabs").tabs();
-	});
+        $(document).ready(function(){
+                $("button, input[type='submit']").button();
+                $("#tabs").tabs();
+        });
 	
 </script>
 
-<h1>REST request</h1>
+    <h1>REST request</h1>
 
-<div id="tabs">
-   <ul>
-        <li><a href="#tabs-1">Customers list (GET)</a></li>
-        <li><a href="#tabs-2">Single customer (GET)</a></li>
-        <li><a href="#tabs-3">Add customer (POST)</a></li>
-        <li><a href="#tabs-4">Edit customer (PUT)</a></li>
-        <li><a href="#tabs-5">Delete customer (DELETE)</a></li>
-   </ul>
-		
-	<div id="tabs-1">
-		<table>
-			<tr>
-				<td>I want to see the result in</td>
-				<td>
-					<select id="list_format">
-						<option value="html">HTML</option>
-						<option value="xml">XML</option>
-						<option value="json">JSON</option>
-					</select>				
-				</td>
-			</tr>
-		</table>
-		<div class="button_footer">
-			<button onclick="$(document).attr('location', 'list/' + $('#list_format').val())">Go !!</button>	
-		</div>
-	</div>
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">Customers list (GET)</a></li>
+            <li><a href="#tabs-2">Single customer (GET)</a></li>
+            <li><a href="#tabs-3">Add customer (POST)</a></li>
+            <li><a href="#tabs-4">Edit customer (PUT)</a></li>
+            <li><a href="#tabs-5">Delete customer (DELETE)</a></li>
+        </ul>
 
-	<div id="tabs-2">
-		<table>
-			<tr>
-				<td>I want to see the result in</td>
-				<td>
-					<select id="single_format">
-						<option value="html">HTML</option>
-						<option value="xml">XML</option>
-						<option value="json">JSON</option>
-					</select>				
-				</td>
-			</tr>
-			<tr>
-				<td>Customer's ID</td>
-				<td><input type="text" id="single_customer_id" /></td>
-			</tr>
-		</table>
-		<div class="button_footer">
-			<button onclick="$(document).attr('location', 'single/' + $('#single_format').val() + '/' + $('#single_customer_id').val())">Go !!</button>	
-		</div>
-	</div>
+        <div id="tabs-1">
+            <table>
+                <tr>
+                    <td>I want to see the result in</td>
+                    <td>
+                        <select id="list_format">
+                            <option value="html">HTML</option>
+                            <option value="xml">XML</option>
+                            <option value="json">JSON</option>
+                        </select>				
+                    </td>
+                </tr>
+            </table>
+            <div class="button_footer">
+                <button onclick="$(document).attr('location', 'list/' + $('#list_format').val())">Go !!</button>	
+            </div>
+        </div>
 
-	<div id="tabs-3">
-		<form action="add" id="add_form" method="POST">
-			<table>
-				<tr>
-					<td>First name</td>
-					<td><input type="text" name="first_name" /></td>
-				</tr>
-				<tr>
-					<td>Last name</td>
-					<td><input type="text" name="last_name" /></td>
-				</tr>
-				<tr>
-					<td>Email address</td>
-					<td><input type="text" name="email_address" /></td>
-				</tr>
-			</table>
-			<div class="button_footer">
-				<input type="submit" value="GO !!" />
-			</div>
-		</form>
-	</div>
+        <div id="tabs-2">
+            <table>
+                <tr>
+                    <td>I want to see the result in</td>
+                    <td>
+                        <select id="single_format">
+                            <option value="html">HTML</option>
+                            <option value="xml">XML</option>
+                            <option value="json">JSON</option>
+                        </select>				
+                    </td>
+                </tr>
+                <tr>
+                    <td>Customer's ID</td>
+                    <td><input type="text" id="single_customer_id" /></td>
+                </tr>
+            </table>
+            <div class="button_footer">
+                <button onclick="$(document).attr('location', 'single/' + $('#single_format').val() + '/' + $('#single_customer_id').val())">Go !!</button>	
+            </div>
+        </div>
 
-	<div id="tabs-4">
-		<form action="edit" id="edit_form" method="POST">
-			<table>
-				<tr>
-					<td>ID</td>
-					<td><input type="text" name="id" /></td>
-				</tr>
-				<tr>
-					<td>First name</td>
-					<td><input type="text" name="first_name" /></td>
-				</tr>
-				<tr>
-					<td>Last name</td>
-					<td><input type="text" name="last_name" /></td>
-				</tr>
-				<tr>
-					<td>Email address</td>
-					<td><input type="text" name="email_address" /></td>
-				</tr>
-			</table>
-			<div class="button_footer">
-				<input type="submit" value="GO !!" />
-			</div>
-		</form>
-	</div>
+        <div id="tabs-3">
+            <form action="add" id="add_form" method="POST">
+                <table>                    
+                    <tr>
+                        <td>First name</td>
+                        <td><input type="text" name="first_name" /></td>
+                    </tr>
+                    <tr>
+                        <td>Last name</td>
+                        <td><input type="text" name="last_name" /></td>
+                    </tr>
+                    <tr>
+                        <td>Email address</td>
+                        <td><input type="text" name="email_address" /></td>
+                    </tr>
+                </table>
+                <div class="button_footer">
+                    <input type="submit" value="GO !!" />
+                </div>
+            </form>
+        </div>
 
-	<div id="tabs-5">
-		<table>
-			<tr>
-				<td>Customer's ID</td>
-				<td><input type="text" id="delete_customer_id" /></td>
-			</tr>
-		</table>
-		<div class="button_footer">
-			<button onclick="$(document).attr('location', 'delete/' + $('#delete_customer_id').val())">Go !!</button>
-		</div>
-	</div>		
-</div>
+        <div id="tabs-4">
+            <form action="edit" id="edit_form" method="POST">
+                <table>
+                    <tr>
+                        <td>ID</td>
+                        <td><input type="text" name="id" /></td>
+                    </tr>
+                    <tr>
+                        <td>First name</td>
+                        <td><input type="text" name="first_name" /></td>
+                    </tr>
+                    <tr>
+                        <td>Last name</td>
+                        <td><input type="text" name="last_name" /></td>
+                    </tr>
+                    <tr>
+                        <td>Email address</td>
+                        <td><input type="text" name="email_address" /></td>
+                    </tr>
+                </table>
+                <div class="button_footer">
+                    <input type="submit" value="GO !!" />
+                </div>
+            </form>
+        </div>
+
+        <div id="tabs-5">
+            <table>
+                <tr>
+                    <td>Customer's ID</td>
+                    <td><input type="text" id="delete_customer_id" /></td>
+                </tr>
+            </table>
+            <div class="button_footer">
+                <button onclick="$(document).attr('location', 'delete/' + $('#delete_customer_id').val())">Go !!</button>
+            </div>
+        </div>		
+    </div>
 {% endblock %}
